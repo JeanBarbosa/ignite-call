@@ -1,3 +1,36 @@
+```mermaid
+erDiagram
+
+  Product {
+    String id PK 
+    String name  
+    String slug  
+    Decimal price  
+    Boolean hasFreeShipping  
+    Int rating  
+    String description  
+    DateTime createdAt  
+    DateTime updatedAt  
+    }
+  
+
+  Category {
+    String id PK 
+    String name  
+    }
+  
+
+  CategoriesOnProducts {
+    String id PK 
+    DateTime assignedAt  
+    String assignedBy  
+    }
+  
+    CategoriesOnProducts o{--|| Product : "product"
+    CategoriesOnProducts o{--|| Category : "category"
+```
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
